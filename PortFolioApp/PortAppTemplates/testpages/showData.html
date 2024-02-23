@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>The user Details are given below</p>
+        <p>{{ object_list.1}}</p>
+        <table border="black">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Edit</th>
+            </tr>
+            {% for item in object_list %}
+            <tr>
+                <td> {{item.id}} </td>
+                <td>
+                   {{item.firstName}} {{item.lastName}}
+                </td>
+                <td>
+                    <a href="http://127.0.0.1:8000/portfolio/deleteuser/{{item.pk}}">Delete User</a><i> |</i>
+                    <a href="http://127.0.0.1:8000/portfolio/updateuser/{{item.pk}}">Update User</a>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </table><br>
+        <!-- <p>{{object_list.last.firstName}}</p> -->
+        <button><a href="http://127.0.0.1:8000/portfolio/createuser">Create User</a></button>
+    </div>
+    <a href="http://127.0.0.1:8000/portfolio/deleteuser/{{object_list}}"></a>
+</body>
+
+</html>

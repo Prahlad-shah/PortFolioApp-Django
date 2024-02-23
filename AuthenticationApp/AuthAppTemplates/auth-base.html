@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>{% block 'title' %}
+        Page Title
+        {% endblock %}</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{% static 'authapp/assets/favicon.ico' %}" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'authapp/css/styles.css' %}" rel="stylesheet" />
+    <!-- Custom fonts for this template-->
+    <link href="{% static 'authapp/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{% static 'authapp/css/sb-admin-2.min.css' %}" rel="stylesheet">
+</head>
+
+<body id="page-top" class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <div>
+            {% block 'navbar' %}
+            This is auth Nav bar Override it!!!
+            {% endblock %}
+        </div>
+        <div>
+            {% block 'content' %}
+            This is auth page contents
+            {% endblock %}
+        </div>
+        <div>
+            {% block 'footer' %}
+            This is auth footer content
+            {% endblock %}
+        </div>
+    </main>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{% static 'authapp/js/scripts.js' %}"></script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static 'authapp/vendor/jquery/jquery.min.js'  %}"></script>
+    <script src="{% static 'authapp/vendor/bootstrap/js/bootstrap.bundle.min.js'  %}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static 'authapp/vendor/jquery-easing/jquery.easing.min.js'  %}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{% static 'authapp/js/sb-admin-2.min.js'  %}"></script>
+</body>
+
+</html>
