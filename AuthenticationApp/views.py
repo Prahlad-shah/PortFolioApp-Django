@@ -14,7 +14,7 @@ from django.contrib import messages
 # Create your views here.
 
 def indexPage(request):
-    return render(request, 'testuserpages/testhome.html')
+    return render(request, 'AuthPages/landingpage.html')
 
 class UserSignUpView(CreateView):
     form_class = forms.UserCreateForm

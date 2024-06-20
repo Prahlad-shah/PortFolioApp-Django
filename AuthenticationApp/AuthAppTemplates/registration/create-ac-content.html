@@ -1,0 +1,80 @@
+<main>
+    <!-- Begin Create Account -->
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                            </div>
+                            <form method="post" action="" class="user">
+                                {% csrf_token %}
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input name="first_name" type="text" class="form-control form-control-user"
+                                            id="exampleFirstName" placeholder="First Name">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input name="last_name" type="text" class="form-control form-control-user"
+                                            id="exampleLastName" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input name="email" type="email" class="form-control form-control-user"
+                                        id="exampleInputEmail" placeholder="Email Address*" required>
+                                </div>
+                                <div class="form-group">
+                                    <input name="username" type="text" class="form-control form-control-user"
+                                        id="exampleInputEmail" placeholder="Enter Username*">
+                                    <i>{{form.errors.username}}</i>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input name="password1" type="password"
+                                            class="form-control form-control-user" id="exampleInputPassword"
+                                            placeholder="Password*">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input name="password2" type="password"
+                                            class="form-control form-control-user" id="exampleRepeatPassword"
+                                            placeholder="Repeat Password*">
+                                    </div>
+                                    <i class="text-center">
+                                        <p>NOte# Password must contains alphanumerics and special characters. <br> eg: Asd@4521</p>
+                                        {% if form.errors %}
+                                        <!-- {{form.error_messages.password_mismatch}} -->
+                                        {{form.errors.password1}}
+                                        {% endif %}
+                                    </i>
+                                </div>
+                                <input type="submit" value="Register Account" class="btn btn-primary btn-user btn-block">
+                                <hr>
+                                <a href="#" class="btn btn-google btn-user btn-block">
+                                    <i class="fab fa-google fa-fw"></i> Register with Google
+                                </a>
+                                <a href="#" class="btn btn-facebook btn-user btn-block">
+                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                                </a>
+                            </form>
+                            <hr>
+                            <div class="text-center">
+                                <a class="small" href="{% url 'accounts:password_reset'  %}">Forgot Password?</a>
+                            </div>
+                            <div class="text-center">
+                                <a class="small" href="{% url 'accounts:login'  %}">Already have an account?
+                                    Login!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- End Create Account -->
+</main>
